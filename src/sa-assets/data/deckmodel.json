@@ -1,0 +1,20 @@
+{
+  "deckId": "abc",
+  "cards": [
+    {
+      "cardId": "def",
+      "content": {
+        "cueText": "best web UI framework",
+        "shortAnswerText": "Angular"
+      }
+    },
+    {
+      "cardId": "ghi",
+      "content": {
+        "cueText": "most expressive language",
+        "shortAnswerText": "Typescript",
+        "longAnswerText": "Let me explain"
+      }
+    }
+  ]
+}
