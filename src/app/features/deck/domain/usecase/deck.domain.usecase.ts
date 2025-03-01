@@ -3,7 +3,7 @@ import { InfraFailure } from "../../../../shared/error/custom_failures";
 import { Either } from "../../../../shared/error/either_left_right";
 import { Usecase } from "../../../../shared/usecase";
 import { IDeckRepository } from "../contract/deck.domain.contract";
-import { Deck } from "../entity/deck.domain.entity";
+import { Deck, DeckParam } from "../entity/deck.domain.entity";
 
 export class GettingDeckUsecase implements Usecase<Deck, DeckParam> {
   private readonly deckRepositoryContract: IDeckRepository;
@@ -13,12 +13,6 @@ export class GettingDeckUsecase implements Usecase<Deck, DeckParam> {
   }
 
   async execute(param: DeckParam): Promise<Either<InfraFailure, Deck>> {
-    return await this.deckRepositoryContract.getDeckData(param.deckId);
-  }
-}
-
-export class DeckParam extends Equatable {
-  constructor(public readonly deckId: string) {
-    super();
+    return await this.deckRepositoryContract.getDeckData(param);
   }
 }

@@ -14,3 +14,10 @@ export class Deck extends Equatable {
     return super.equals(o);
   }
 }
+
+// utility classes
+export class DeckParam extends Equatable {
+  constructor(public readonly deckId: string) {
+    super();
+  }
+}
